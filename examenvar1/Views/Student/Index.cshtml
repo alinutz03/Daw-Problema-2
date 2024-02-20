@@ -1,0 +1,36 @@
+﻿@model List<examenvar1.Models.Student>
+
+
+<h1>Studenti</h1>
+<a asp-action="GetAdaugareStudent">Adauga un student</a>
+<a asp-action="ListarePeGrupe">Listare pe grupe</a>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nume</th>
+            <th>Prenume</th>
+            <th>Email</th>
+            <th>Data Nasterii</th>
+            <th>Grupa</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Nume</td>
+                <td>@student.Prenume</td>
+                <td>@student.Email</td>
+                <td>@student.DataNasterii</td>
+                <td>@student.Grupa.Denumire</td>
+                <td><a asp-action="EditeazaStudent" asp-route-id="@student.Id">Editeaza studentul</a></td> 
+                <td><a asp-action="StergeStudent" asp-route-id="@student.Id" onclick="return confirm('Esti sigur ca vrei sa stergi studentul ?')">Sterge un student</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

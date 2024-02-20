@@ -1,0 +1,16 @@
+﻿@model examenvar1.Models.Student
+
+<form method="post" asp-action="PostAdaugareStudent">
+    <label asp-for="@Model.Nume">Nume</label><br />
+    <input asp-for="@Model.Nume" required="true"/><br />
+    <label asp-for="@Model.Prenume">Prenume</label><br />
+    <input asp-for="@Model.Prenume" required="true" /><br />
+    <label asp-for="@Model.Email">Email</label><br />
+    <input asp-for="@Model.Email" required="true" /><br />
+    <label asp-for="@Model.DataNasterii">DataNasterii</label><br />
+    <input asp-for="@Model.DataNasterii" required="true" /><br />
+    <label asp-for="@Model.GrupaId">GrupaId</label><br />
+    <select asp-for="@Model.GrupaId" asp-items="ViewBag.Grupa"></select><br />
+
+    <input type="submit" />
+</form>

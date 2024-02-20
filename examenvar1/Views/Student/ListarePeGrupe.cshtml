@@ -1,0 +1,16 @@
+﻿@model List<dynamic>
+
+<h2>Numărul de studenți per grupă</h2>
+<table class="table">
+    <tr>
+        <th>Grupă</th>
+        <th>Număr de studenți</th>
+    </tr>
+    @foreach (var groupCount in @ViewBag.GroupCounts)
+    {
+        <tr>
+            <td>@groupCount.GroupID</td>
+            <td>@groupCount.Count</td>
+        </tr>
+    }
+</table>
